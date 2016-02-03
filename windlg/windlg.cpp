@@ -221,8 +221,7 @@ int msg_win(DLGSTR dlgcfg) {
 	unsigned int all_lines = count_lines(dlgcfg.line, maxX)/*размер по y*/;
 	unsigned int max_line = 0/*Размер по x*/;
 	if (dlgcfg.keys > 3) dlgcfg.keys = 3;
-	if (dlgcfg.keys < 0) dlgcfg.keys = 1;
-	if ((dlgcfg.keys == 1) || (dlgcfg.keys == 0)) {
+	if (dlgcfg.keys < 1) {
 		dlgcfg.keys = 1;
 		if (dlgcfg.f_button.length() == 0) dlgcfg.f_button = "OK";
 		max_line += dlgcfg.f_button.length() + 4; // Размер кнопок, расстояние до границ и пропуск между кнопками
